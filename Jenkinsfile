@@ -6,7 +6,7 @@ node {
 	stage('Test') {
 		echo 'make check'
 	}
-	stage('Deploya') {
+	stage('Deploy') {
 		echo 'make publish'
 	} 
 }
