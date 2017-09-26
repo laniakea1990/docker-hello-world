@@ -1,4 +1,12 @@
 #!/usr/bin/env groovy
 node { 
-    echo 'Hello World' 
+    stage('Build') {
+		echo 'make'
+	}
+	stage('Test') {
+		echo 'make check'
+	}
+	stage('Deploya') {
+		echo 'make publish'
+	} 
 }
