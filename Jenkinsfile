@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-node(docker 'maven:3-alpine') { 
+node('maven:3-alpine') { 
 	checkout scm
     stage('Build') {
 		echo 'make'
