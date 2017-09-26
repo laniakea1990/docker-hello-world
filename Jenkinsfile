@@ -1,9 +1,13 @@
 #!/usr/bin/env groovy
-node('maven:3-alpine') { 
+node { 
 	checkout scm
+	docker.image('maven:3-alpine').inside {
+        stage('TestDocker') {
+            sh 'mvn --version'
+        }
+    }
     stage('Build') {
 		echo 'make'
-		sh 'mvn --version'
 	}
 	stage('Test') {
 		echo 'make check'
