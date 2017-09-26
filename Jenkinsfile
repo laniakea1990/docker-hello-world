@@ -1,21 +1,12 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
+#!/usr/bin/env groovy
+node { 
+    stage('Build') {
+		echo 'make'
+	}
+	stage('Test') {
+		echo 'make check'
+	}
+	stage('Deploy') {
+		echo 'make publish'
+	} 
 }
