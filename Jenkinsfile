@@ -10,7 +10,7 @@ node {
         }
     }
    stage('Build Docker Image') {
-      def customImage = docker.build("docker-ci-cd:${env.BUILD_ID}")
+      def customImage = docker.build("docker.io/library/docker-ci-cd:${env.BUILD_ID}")
 	  customImage.push()
    }
    stage('Deploy') {
