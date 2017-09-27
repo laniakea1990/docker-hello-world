@@ -3,7 +3,7 @@ node {
       // Get some code from a GitHub repository
       git 'https://github.com/raiseking/docker-hello-world.git'
    }
-   docker.withRegistry('192.168.139.129:5000') {
+   docker.withRegistry('http://192.168.139.129:5000/') {
 		docker.image('maven:3.5-alpine').inside('-v $HOME/.m2:/root/.m2') {
 			stage('Build') {
 			// Run the maven build
