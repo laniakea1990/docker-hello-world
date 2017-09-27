@@ -1,3 +1,4 @@
+//push to docker hub
 node {
    stage('Git Clone') { // for display purposes
       // Get some code from a GitHub repository
