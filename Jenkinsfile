@@ -21,7 +21,7 @@ node {
       echo "Deploy artifact image to docker env."
 	  docker.withRegistry('http://192.168.139.129:5000/') {
 			sh "docker pull 192.168.139.129:5000/docker-cicd:${env.BUILD_ID}"
-			sh "docker run -d -p 8888:8080 docker-cicd:${env.BUILD_ID}"
+			sh "docker run -d -p 8888:8080 192.168.139.129:5000/docker-cicd:${env.BUILD_ID}"
        }
    }
 }
