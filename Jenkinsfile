@@ -11,6 +11,7 @@ node {
     }
    stage('Build Docker Image') {
       def customImage = docker.build("laniakea1990/docker-ci-cd:${env.BUILD_ID}")
+	  sh "docker login -u laniakea1990 -p #jrrrk1990811#"
 	  customImage.push()
    }
    stage('Deploy') {
