@@ -11,6 +11,7 @@ node {
     }
    stage('Build Docker Image') {
       def customImage = docker.build("docker-ci-cd:${env.BUILD_ID}")
+	  customImage.push()
    }
    stage('Deploy') {
       echo "Deploy artifact image to docker env."
